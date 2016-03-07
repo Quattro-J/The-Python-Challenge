@@ -1,0 +1,22 @@
+<1>use regression to find the string in the form of 'xXXXxXXXx'
+import re
+"".join(re.findall('[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]',tetx))
+
+<2>check by string
+import string
+
+s = open('character.txt','r').read()
+lwr=string.lowercase
+upr=string.uppercase
+
+for n in range(1,len(s)-7):
+    if (s[n-1] in lwr) and (s[n] in upr) and (s[n+1] in upr)\
+    and (s[n+2] in upr) and (s[n+3] in lwr)\
+    and (s[n+4] in upr) and (s[n+5] in upr)\
+    and (s[n+6] in upr) and (s[n+7] in lwr):
+        print s[n+3]
+  
+  <3>reduce(function, sequence[,initial])函数中有两个参数和一个可选参数；
+  function参数是一个函数，sequence参数是一个序列，
+  使用reduce函数可以给函数function提供参数进行累加，参数来源于序列sequence的元素；
+  
