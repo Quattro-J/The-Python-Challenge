@@ -1,0 +1,28 @@
+#check the source code,and find out the question "find rare characters in the mess below:"
+#<1>filter the charactor form the mess
+mess=open('mess.txt').read()
+s=filter(lambda x:x in string.letters,mess)
+
+#<2>读取文本内容；
+#定义一个字典，里面存储每个字符以及对应出现的频数；
+#计算出字符平均稀有情况（所有字符数量/字符数量）；
+#循环输出稀有性低于平均水平的的字符。
+
+s = ''.join([line.rstrip() for line in open('mess.txt')])    
+occ = {}
+
+for c in s: 
+    occ[c] = occ.get(c, 0) + 1  # 相同的字符，字典的值加1
+    avgOC = len(s)  #  or len(occ)
+
+print ''.join([c for c in s if occ[c] < avg])
+
+#<3>
+mess=open('mess.txt').read()
+d={}
+for ch in s:
+      d[ch]=d.get(ch,0)+1
+      
+print ''.join([ch for ch in s if d[ch]==1])
+
+########equality,jump to http://www.pythonchallenge.com/pc/def/equality.html
