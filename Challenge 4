@@ -1,6 +1,6 @@
 <1>use regression to find the string in the form of 'xXXXxXXXx'
 import re
-"".join(re.findall('[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]',tetx))
+"".join(re.findall('[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]',text))
 
 <2>check by string
 import string
